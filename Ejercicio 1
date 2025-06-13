@@ -21,6 +21,8 @@ def buscar_numero_en_lista():
 
     if encontrado:
         print(f"¡El número {numero_buscar} se encuentra en la lista!")
-        print(f"Su posición (índice) dentro de la lista es: {posicion}")
+        print(f"Su posición dentro de la lista es: {posicion + 1}")
     else:
         print(f"El número {numero_buscar} NO se encuentra en la lista.")
+
+buscar_numero_en_lista()
