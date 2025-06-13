@@ -1,0 +1,20 @@
+def contar_letras(cadena):
+    vocales = "aeiouAEIOU"
+    consonantes = "bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ"
+
+    cantidad_vocales = 0
+    cantidad_consonantes = 0
+
+    for caracter in cadena:
+        if caracter in vocales:
+            cantidad_vocales += 1
+        elif caracter in consonantes:
+            cantidad_consonantes += 1
+    return cantidad_vocales, cantidad_consonantes
+
+texto_ingresado = input("Por favor, introduce una cadena de texto: ")
+
+num_vocales, num_consonantes = contar_letras(texto_ingresado)
+
+print(f"Número de vocales: {num_vocales}")
+print(f"Número de consonantes: {num_consonantes}")
