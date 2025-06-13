@@ -1,0 +1,26 @@
+def buscar_numero_en_lista():
+
+    lista_numeros = [15, 23, 7, 42, 10, 5, 30, 8, 19, 27]
+    print(f"La lista de números es: {lista_numeros}")
+
+    while True:
+        try:
+            numero_buscar = int(input("Ingresa el número que deseas buscar en la lista: "))
+            break  
+        except ValueError:
+            print("Entrada inválida. Por favor, ingresa un número entero.")
+
+    encontrado = False
+    posicion = -1  
+
+    for i in range(len(lista_numeros)):
+        if lista_numeros[i] == numero_buscar:
+            encontrado = True
+            posicion = i
+            break  
+
+    if encontrado:
+        print(f"¡El número {numero_buscar} se encuentra en la lista!")
+        print(f"Su posición (índice) dentro de la lista es: {posicion}")
+    else:
+        print(f"El número {numero_buscar} NO se encuentra en la lista.")
