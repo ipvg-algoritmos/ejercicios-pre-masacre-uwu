@@ -1,0 +1,36 @@
+def calcular_promedio_lista():
+
+    numeros = []
+    suma_total = 0.0
+    cantidad_numeros = 0
+
+    print("--- Calculadora de Promedio ---")
+    print("Por favor, ingrese números positivos.")
+    print("Ingrese un número negativo para finalizar la entrada y calcular el promedio.")
+
+    while True:
+        try:
+            entrada = input("Ingrese un número: ")
+            numero_actual = float(entrada)
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número válido.")
+            continue
+
+        if numero_actual < 0:
+            break
+
+        numeros.append(numero_actual)
+        suma_total += numero_actual
+        cantidad_numeros += 1
+
+    print("Resultado")
+
+    if cantidad_numeros == 0:
+        print("No se ingresó ningún número positivo para calcular el promedio.")
+    else:
+        promedio = suma_total / cantidad_numeros
+        print(f"Números ingresados: {numeros}")
+        print(f"El promedio de los números ingresados es: {promedio:.2f}")
+
+if __name__ == "__main__":
+    calcular_promedio_lista()

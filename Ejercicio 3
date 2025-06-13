@@ -1,0 +1,33 @@
+def encontrar_mayor_menor_lista():
+    numero_mayor = None
+    numero_menor = None
+    primer_numero_ingresado = False
+    print("Ingrese los numero de su lista.")
+    print("Por favor, ingrese un número negativo para finalizar la entrada.")
+
+    while True:
+        try:
+            entrada = input("ingrese un numero: ")
+            numero_actual = float (entrada)
+        except ValueError:
+            print("Entrada invalida. Por favor, ingrese un numero valido.")
+            continue
+        if numero_actual < 0:
+            break
+
+        if not primer_numero_ingresado:
+            numero_mayor = numero_actual
+            numero_menor = numero_actual
+            primer_numero_ingresado = True
+        else:
+            if numero_actual > numero_mayor:
+                numero_mayor = numero_actual
+            if numero_actual < numero_menor:
+                numero_menor = numero_actual
+    if not primer_numero_ingresado:
+        print("\nNo se ingresó ningún número positivo en la lista.")
+    else:
+        print(f"\nEl número mayor de la lista es: {numero_mayor}")
+        print(f"El número menor de la lista es: {numero_menor}")
+if __name__ == "__main__":
+    encontrar_mayor_menor_lista()
