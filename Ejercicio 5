@@ -1,0 +1,53 @@
+def analizar_matriz():
+    matriz = []
+    print("Ingrese los elementos de la matriz 3x3:")
+    for i in range(3):
+        fila = []
+        for j in range(3):
+            while True:
+                try:
+                    num = int(input(f"Ingrese el elemento de la posición [{i+1}][{j+1}]: "))
+                    fila.append(num)
+                    break
+                except ValueError:
+                    print("Entrada inválida. Por favor, ingrese un número entero.")
+        matriz.append(fila)
+
+    positivos = 0
+    negativos = 0
+    ceros = 0
+
+    print("\nLa matriz ingresada es:")
+    for i in range(3):
+        for j in range(3):
+            print(matriz[i][j], end="\t")
+            if matriz[i][j] > 0:
+                positivos += 1
+            elif matriz[i][j] < 0:
+                negativos += 1
+            else:
+                ceros += 1
+        print()
+
+    suma_diagonal_principal = 0
+    suma_diagonal_secundaria = 0
+
+    for i in range(3):
+        suma_diagonal_principal += matriz[i][i]
+        suma_diagonal_secundaria += matriz[i][2 - i]
+
+    print(f"\nCantidad de números positivos: {positivos}")
+    print(f"Cantidad de números negativos: {negativos}")
+    print(f"Cantidad de ceros: {ceros}")
+
+    print(f"\nSuma de la diagonal principal: {suma_diagonal_principal}")
+    print(f"Suma de la diagonal secundaria: {suma_diagonal_secundaria}")
+
+    if suma_diagonal_principal > suma_diagonal_secundaria:
+        print("La suma de los elementos de la diagonal principal es MAYOR que la suma de la diagonal secundaria.")
+    elif suma_diagonal_principal < suma_diagonal_secundaria:
+        print("La suma de los elementos de la diagonal principal es MENOR que la suma de la diagonal secundaria.")
+    else:
+        print("La suma de los elementos de la diagonal principal es IGUAL a la suma de la diagonal secundaria.")
+
+analizar_matriz()
